@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <title>vision</title>
+</head>
+<body>
+    <div class="background-wrapper">
+        <header>
+           
+            
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="asset/logo.png" alt="Victory Logo">
+                    <span>vision</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="indx.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="exam.html">Exams</a></li>
+                    <li class="dropdown">
+                    <li> <a  class="dropdown-btn">Schools</a>
+                        <div class="dropdown-content">
+                            <a href="maths.html">Maths</a>
+                            <a href="physics.html">Physics</a>
+                            <a href="chemstry.html">Chemistry</a>
+                        </div></li>
+                    </li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li ><a href="todo.html">Todo</a></li>
+                </ul>
+                <div class="auth-buttons">
+                    <button id="loginBtn" class="login-btn">Log In</button>
+                    <button id="signupBtn" class="signup-btn">Sign Up</button>
+                    
+
+                </div>
+                <button class="menu-toggle" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+            </nav>
+        </header>
+    
+        <section class="hero">
+            <div class="hero-section">
+                <h1>Your Bright Future is Our Mission</h1>
+                <p>There will be a description here that will be provided by Victory</p>
+            </div>
+        </section>
+    
+    
+       
+    </div>
+    
+    <section class="abu">
+        <div class="aboutus_text_section">
+            <h1></h1>About us</h1>
+            <h2><strong>Wel Come</strong></h2>
+            <p>Our platform</p>
+            <p>There will be a description below</p>
+            <button class="readmore">Read More</button>
+        </div>
+        <div class="video_section">
+            <video controls>
+                <source src="asset/21.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </section>
+
+  <!-- Login Modal -->
+<div id="loginModal" class="modal">
+    <div class="modal-content login-form">
+        <span class="close-btn">&times;</span>
+        <div class="container">
+            <div class="login-section">
+                <h2>Sign in</h2>
+                <div class="social-buttons">
+                   <a href="https://www.facebook.com" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.twitter.com" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com" class="social-icon"><i class="fab fa-instagram"></i></a>
+            
+                </div>
+                <p>or use your account</p>
+                <form>
+                    <input type="email" placeholder="Email" required>
+                    <input type="password" placeholder="Password" required>
+                    <a href="#" class="forgot-password">Forgot your password?</a>
+                    <button type="submit" class="btn">SIGN IN</button>
+                </form>
+            </div>
+            <div class="signup-section">
+                <h2>Hello, Friend!</h2>
+                <p>Enter your personal details and start journey with us</p>
+                <button class="btn signup-btn">SIGN UP</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal Structure for Progressive Sign-Up -->
+<div class="modal" id="signupModal">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <div class="container_signup">
+            <div class="welcome-section">
+                <h2>Welcome Back!</h2>
+                <p>To keep connected with us, please log in with your personal info</p>
+                <button class="btn"><a href="login" style="color: inherit; text-decoration: none;">SIGN IN</a></button>
+            </div>
+            <div class="signup-section1">
+                <h2>Create Account</h2>
+                <form id="progressive-signup-form">
+                    <!-- Step 1: Personal Information -->
+                    <div class="form-step form-step-active" id="step-1">
+                        <div class="input-group">
+                            <input type="text" placeholder="First Name" required>
+                            <input type="text" placeholder="Last Name" required>
+                        </div>
+                        <button type="button" class="btn next-btn" data-next-step="2">Next</button>
+                    </div>
+
+                    <!-- Step 2: Contact Details -->
+                    <div class="form-step" id="step-2">
+                        <div class="input-group">
+                            <input type="email" placeholder="Email" required>
+                            <input type="tel" placeholder="Phone Number" required>
+                        </div>
+                        <button type="button" class="btn prev-btn" data-prev-step="1">Previous</button>
+                        <button type="button" class="btn next-btn" data-next-step="3">Next</button>
+                    </div>
+
+                    <!-- Step 3: Password Setup -->
+                    <div class="form-step" id="step-3">
+                        <div class="input-group">
+                            <input type="password" placeholder="Password" required>
+                            <input type="password" placeholder="Confirm Password" required>
+                        </div>
+                        <button type="button" class="btn prev-btn" data-prev-step="2">Previous</button>
+                        <button type="submit" class="btn">Sign Up</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="upcoming-tests-section">
+    <h2>Join with us</h2>
+    <h1>Upcoming Tests</h1>
+    <div class="test-row">
+        <div class="test-card">
+            <div class="date">
+                <div class="month">MAR</div>
+                <div class="day">25</div>
+                <div class="year">2024</div>
+            </div>
+            <div class="details">
+                <h3>Biology</h3>
+                <p><i class="fa fa-clock-o"></i> 05:23 AM - 09:23 AM</p>
+            </div>
+        </div>
+        <div class="test-card">
+            <div class="date">
+                <div class="month">MAR</div>
+                <div class="day">25</div>
+                <div class="year">2024</div>
+            </div>
+            <div class="details">
+                <h3>Biology</h3>
+                <p><i class="fa fa-clock-o"></i> 05:23 AM - 09:23 AM</p>
+            </div>
+        </div>
+        <div class="test-card">
+            <div class="date">
+                <div class="month">MAR</div>
+                <div class="day">25</div>
+                <div class="year">2024</div>
+            </div>
+            <div class="details">
+                <h3>Biology</h3>
+                <p><i class="fa fa-clock-o"></i> 05:23 AM - 09:23 AM</p>
+            </div>
+        </div>
+        <div class="test-card">
+            <div class="date">
+                <div class="month">MAR</div>
+                <div class="day">25</div>
+                <div class="year">2024</div>
+            </div>
+            <div class="details">
+                <h3>Biology</h3>
+                <p><i class="fa fa-clock-o"></i> 05:23 AM - 09:23 AM</p>
+            </div>
+        </div>
+    </div>
+       
+    
+</section>
+
+<section class="schools-section">
+    <h2 class="section-title">Schools</h2>
+    <div class="school-cards">
+        <div class="school-card">
+            <img src="asset/school1.png" alt="Adama School Logo" class="school-logo">
+            <h3 class="school-name">Adama School</h3>
+            <p class="school-type">Public</p>
+            <p class="school-description">There will be a description here that will provide more details about the school.</p>
+        </div>
+        <div class="school-card">
+            <img src="asset/school2.png" alt="Adama School Logo" class="school-logo">
+            <h3 class="school-name">Adama School</h3>
+            <p class="school-type">Public</p>
+            <p class="school-description">There will be a description here that will provide more details about the school.</p>
+        </div>
+        <div class="school-card">
+            <img src="asset/logo.png" alt="Adama School Logo" class="school-logo">
+            <h3 class="school-name">Adama School</h3>
+            <p class="school-type">Public</p>
+            <p class="school-description">There will be a description here that will provide more details about the school.</p>
+        </div>
+        <div class="school-card">
+            <img src="asset/logo.png" alt="Adama School Logo" class="school-logo">
+            <h3 class="school-name">Adama School</h3>
+            <p class="school-type">Public</p>
+            <p class="school-description">There will be a description here that will provide more details about the school.</p>
+        </div>
+    </div>
+</section>
+
+
+<section class="blog_container">
+    <h2>Top Stories</h2>
+    <h1>Blog & Events</h1>
+    <div class="blog_navigation">
+        <button class="blog_button">❮</button>
+        <button class="blog_button">❯</button>
+    </div>
+    <div class="blog-cards">
+        <div class="blog-card">
+            <img src="asset/13.png" alt="Blog Image 1" class="blog-image">
+            <div class="blog-date">AUGUST 6, 2024 | 3 Comments</div>
+            <h3>How are schools</h3>
+            <p>There will be a description here that will be provided.</p>
+        </div>
+        <div class="blog-card">
+            <img src="asset/11.jpg" alt="Blog Image 2" class="blog-image">
+            <div class="blog-date">AUGUST 6, 2024 | 3 Comments</div>
+            <h3>How are schools</h3>
+            <p>There will be a description here that will be provided.</p>
+        </div>
+        <div class="blog-card">
+            <img src="asset/12 (1).png" alt="Blog Image 3" class="blog-image">
+            <div class="blog-date">AUGUST 6, 2024 | 3 Comments</div>
+            <h3>How are schools</h3>
+            <p>There will be a description here that will be provided.</p>
+        </div>
+    </div>
+</section>
+<section class="testimonial-section">
+    <h3 class="section-subtitle">Happy Students</h3>
+    <h2 class="section-title">Testimonial</h2>
+
+    <div class="testimonial-slider">
+        <div class="testimonial-item active">
+            <p class="testimonial-text">
+                <em>“There will be a description here that will be provided by victory.”</em>
+            </p>
+            <p class="testimonial-author">
+                <strong>Samson</strong><br>
+                <span>School Adama</span>
+            </p>
+        </div>
+
+        <div class="testimonial-item">
+            <p class="testimonial-text">
+                <em>“Another great experience shared by a student who excelled.”</em>
+            </p>
+            <p class="testimonial-author">
+                <strong>Jane Doe</strong><br>
+                <span>School adis abba</span>
+            </p>
+        </div>
+
+        <div class="testimonial-item">
+            <p class="testimonial-text">
+                <em>“A third testimonial with inspirational words.”</em>
+            </p>
+            <p class="testimonial-author">
+                <strong>John Smith</strong><br>
+                <span>School hossana </span>
+            </p>
+        </div>
+    </div>
+
+    <div class="testimonial-pagination">
+        <div class="dot active" data-index="0"></div>
+        <div class="dot" data-index="1"></div>
+        <div class="dot" data-index="2"></div>
+    </div>
+</section>
+
+
+
+
+   <!-- Footer Section -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section about">
+            <img src="asset/logo.png" alt="Victory Logo" class="footer-logo">
+            <h2>vision</h2>
+            <p>At Victory E-Learning, we are dedicated to empowering students with the knowledge and skills they need to excel academically and beyond. Our platform offers a wide range of interactive courses and resources tailored to meet the diverse needs of learners at all levels.</p>
+        </div>
+        <div class="footer-section menu">
+            <h2>Menu</h2>
+            <ul>
+                <li><a href="indx.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="exam.html">Exams</a></li>
+                <li><a href="schools.html">Schools</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </div>
+        <div class="footer-section contact">
+            <h2>Contact</h2>
+            <ul>
+                <li><strong>OFFICE ADDRESS</strong><br>Office address</li>
+                <li><strong>BUSINESS PHONE</strong><br>+25121139577</li>
+                <li><strong>BUSINESS EMAIL</strong><br>info@Victory.com</li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-social">
+        <a href="https://www.facebook.com" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.twitter.com" class="social-icon"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com" class="social-icon"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+    
+</footer>
+
+    
+</body>
+</html>

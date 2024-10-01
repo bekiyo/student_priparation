@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+
+    <div class="background-wrapper">
+        <header>
+           
+            
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="asset/logo.png" alt="Victory Logo">
+                    <span>vision</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="indx.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="exam.html">Exams</a></li>
+                    <li class="dropdown">
+                    <li> <a  class="dropdown-btn">Schools</a>
+                        <div class="dropdown-content">
+                            <a href="maths.html">Maths</a>
+                            <a href="physics.html">Physics</a>
+                            <a href="chemstry.html">Chemistry</a>
+                        </div></li>
+                    </li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li ><a href="todo.html">Todo</a></li>
+                </ul>
+                <div class="auth-buttons">
+                    <button id="loginBtn" class="login-btn">Log In</button>
+                    <button id="signupBtn" class="signup-btn">Sign Up</button>
+                    
+
+                </div>
+                <button class="menu-toggle" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+            </nav>
+        </header>
+        
+       
+       
+    </div>
+
+    
+    <h1>National Exam Preparation</h1>
+
+    <div id="question-container">
+        <h2 id="question"></h2>
+        <div id="options-container">
+            <label><input type="radio" name="option" value="1" /> <span id="option1"></span></label><br>
+            <label><input type="radio" name="option" value="2" /> <span id="option2"></span></label><br>
+            <label><input type="radio" name="option" value="3" /> <span id="option3"></span></label><br>
+            <label><input type="radio" name="option" value="4" /> <span id="option4"></span></label><br>
+        </div>
+        <button id="nextButton" onclick="nextQuestion()">Next</button>
+    </div>
+
+    <div id="result-container" style="display:none;">
+        <h2>Exam Completed!</h2>
+        <p>Your score: <span id="score"></span></p>
+        <p>Your unique code: <span id="uniqueCode"></span></p>
+    </div>
+
+   
+
+
+    
+
+
+   <!-- Footer Section -->
+   <footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section about">
+            <img src="asset/logo.png" alt="Victory Logo" class="footer-logo">
+            <h2>vision</h2>
+            <p>At Victory E-Learning, we are dedicated to empowering students with the knowledge and skills they need to excel academically and beyond. Our platform offers a wide range of interactive courses and resources tailored to meet the diverse needs of learners at all levels.</p>
+        </div>
+        <div class="footer-section menu">
+            <h2>Menu</h2>
+            <ul>
+                <li><a href="indx.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="exam.html">Exams</a></li>
+                <li><a href="schools.html">Schools</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </div>
+        <div class="footer-section contact">
+            <h2>Contact</h2>
+            <ul>
+                <li><strong>OFFICE ADDRESS</strong><br>Office address</li>
+                <li><strong>BUSINESS PHONE</strong><br>+25121139577</li>
+                <li><strong>BUSINESS EMAIL</strong><br>info@Victory.com</li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-social">
+        <a href="https://www.facebook.com" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.twitter.com" class="social-icon"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com" class="social-icon"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+    
+</footer>
+
+
+</body>
+</html>

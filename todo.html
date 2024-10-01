@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js"defer></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="asset/logo.png" alt="Victory Logo">
+                <span>vision</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="indx.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="exam.html">Exams</a></li>
+                <li class="dropdown">
+                <li> <a  class="dropdown-btn">Schools</a>
+                    <div class="dropdown-content">
+                        <a href="maths.html">Maths</a>
+                        <a href="physics.html">Physics</a>
+                        <a href="chemstry.html">Chemistry</a>
+                    </div></li>
+                </li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li ><a href="todo.html">Todo</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <button id="loginBtn" class="login-btn">Log In</button>
+                <button id="signupBtn" class="signup-btn">Sign Up</button>
+                
+
+            </div>
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+        </nav>
+    </header>
+
+    <div class="container-todo">
+        <h1>To-Do List</h1>
+
+        <!-- Input area for tasks -->
+        <div class="input-section_todo">
+            <input type="text" id="new-task" placeholder="Add a new task..." />
+            <button id="add-task">Add Task</button>
+        </div>
+
+        <!-- Task list -->
+        <ul id="task-list_todo"></ul>
+    </div>
+
+    <!-- Optional modal for editing tasks -->
+    <div id="edit-modal" class="modal_todo">
+        <div class="modal-content_todo">
+            <span class="close">&times;</span>
+            <h2>Edit Task</h2>
+            <input type="text" id="edit-task-input" />
+            <button id="save-edit">Save</button>
+        </div>
+    </div>
+
+   
+</body>
+</html>
