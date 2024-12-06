@@ -269,11 +269,9 @@ window.onload = loadQuestion;
 
 
 
-
-// todolist
 // Get references to the DOM elements
 const taskInput = document.getElementById('new-task');
-const taskList = document.getElementById('task-list');
+const taskList = document.getElementById('task-list_todo');
 const addTaskButton = document.getElementById('add-task');
 const editModal = document.getElementById('edit-modal');
 const closeModal = document.querySelector('.close');
@@ -288,49 +286,85 @@ document.addEventListener('DOMContentLoaded', loadTasks);
 
 // Add task event listener
 addTaskButton.addEventListener('click', addTask);
-taskInput.addEventListener('keypress', function(e) {
+taskInput.addEventListener('keypress', function (e) {
     if (e.key === 'Enter') {
         addTask();
     }
 });
+//filter 
 
-// Function to add a new task
+const taskFilterDropdown = document.getElementById('task-filter');
+
+// Default filter status
+let filterStatus = 'all';
+
+// Add event listener for the dropdown
+taskFilterDropdown.addEventListener('change', () => {
+    filterStatus = taskFilterDropdown.value; // Get the selected value
+    renderTasks();
+});
+
+//add task
 function addTask() {
     const taskText = taskInput.value.trim();
     if (taskText === '') return;
 
-    const task = {
-        text: taskText,
-        completed: false
-    };
-    tasks.push(task);
-    saveTasks();
-    renderTasks();
-    taskInput.value = '';
+    const task = { text: taskText, completed: false };
+    tasks.unshift(task); // Add the new task to the start of the array
+    saveTasks(); // Save tasks to localStorage
+    renderTasks(); // Re-render the task list
+    taskInput.value = ''; // Clear the input field
 }
-
-// Function to render tasks
 function renderTasks() {
-    taskList.innerHTML = ''; // Clear the current list
+    taskList.innerHTML = ''; // Clear the task list
 
-    tasks.forEach((task, index) => {
+    // Filter tasks based on the selected filter status
+    const filteredTasks = tasks.filter(task => {
+        if (filterStatus === 'completed') {
+            return task.completed;
+        } else if (filterStatus === 'uncompleted') {
+            return !task.completed;
+        }
+        return true; // Show all tasks by default
+    });
+
+    filteredTasks.forEach((task, index) => {
         const taskItem = document.createElement('li');
-        taskItem.classList.add(task.completed ? 'completed' : '');
+        taskItem.className = `todo-item ${task.completed ? 'completed' : ''}`;
 
-        taskItem.innerHTML = `
-            <span>${task.text}</span>
-            <div>
-                <button onclick="toggleComplete(${index})">${task.completed ? 'Undo' : 'Complete'}</button>
-                <button onclick="editTask(${index})">Edit</button>
-                <button onclick="deleteTask(${index})">Delete</button>
-            </div>
-        `;
+        const span = document.createElement('span');
+        span.textContent = task.text;
+        taskItem.appendChild(span);
 
-        taskList.appendChild(taskItem);
+        const completeButton = document.createElement('button');
+        completeButton.innerHTML = `<i class="${task.completed ? 'fas fa-undo' : 'fas fa-check'}"></i>`;
+        completeButton.className = 'complete-btn';
+        completeButton.addEventListener('click', () => toggleComplete(index));
+
+        const editButton = document.createElement('button');
+        editButton.innerHTML = '<i class="fas fa-edit"></i>';
+        editButton.className = 'edit-btn';
+        editButton.addEventListener('click', () => editTask(index));
+
+        const deleteButton = document.createElement('button');
+        deleteButton.innerHTML = '<i class="fas fa-trash-alt"></i>';
+        deleteButton.className = 'delete-btn';
+        deleteButton.addEventListener('click', () => deleteTask(index));
+
+        const buttonContainer = document.createElement('div');
+        buttonContainer.appendChild(completeButton);
+        buttonContainer.appendChild(editButton);
+        buttonContainer.appendChild(deleteButton);
+
+        taskItem.appendChild(buttonContainer);
+
+        // Prepend new tasks to the top
+        taskList.prepend(taskItem);
     });
 }
 
-// Function to mark a task as completed/incomplete
+
+// Function to toggle task completion
 function toggleComplete(index) {
     tasks[index].completed = !tasks[index].completed;
     saveTasks();
@@ -351,7 +385,7 @@ function editTask(index) {
     editModal.style.display = 'block';
 }
 
-// Function to save the edited task
+// Save edited task
 saveEditButton.addEventListener('click', () => {
     const editedText = editTaskInput.value.trim();
     if (editedText === '') return;
@@ -362,27 +396,24 @@ saveEditButton.addEventListener('click', () => {
     closeModalFunc();
 });
 
-// Function to save tasks in local storage
+// Save tasks to local storage
 function saveTasks() {
     localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
-// Function to load tasks from local storage
+// Load tasks from local storage
 function loadTasks() {
     renderTasks();
 }
 
-// Close the modal when 'X' is clicked
+// Close the modal
 closeModal.addEventListener('click', closeModalFunc);
-
-// Function to close the edit modal
 function closeModalFunc() {
     editModal.style.display = 'none';
 }
 
-// Close the modal when clicking outside the modal content
-window.onclick = function(event) {
+window.onclick = function (event) {
     if (event.target == editModal) {
         editModal.style.display = 'none';
     }
-}
+};

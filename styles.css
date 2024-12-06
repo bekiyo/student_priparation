@@ -1198,74 +1198,175 @@ button {
 
 /*todolist*/
 
-
+#todo-wrapper {
+    /* Full height of the viewport */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+margin: 20px 0px;
+}
 .container-todo {
-    width: 50%;
-    margin: 50px auto;
-    background-color: #fff;
+    background-color: white;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-h1 {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
     text-align: center;
+    align-items: center;
+}
+.filter-dropdown {
+    margin-bottom: 20px; /* Spacing below the dropdown */
+    text-align: center; /* Center the dropdown */
 }
 
-.input-section {
-    display: flex;
-    justify-content: space-between;
+.filter-dropdown label {
+    font-size: 16px; /* Font size for the label */
+    margin-right: 10px; /* Spacing between the label and the dropdown */
+    font-weight: bold; /* Bold label for emphasis */
+}
+
+#task-filter {
+    padding: 10px; /* Inner spacing */
+    font-size: 16px; /* Font size for the dropdown options */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 4px; /* Rounded corners */
+    background-color: #fff; /* White background */
+    color: #333; /* Dark text color */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: border-color 0.3s; /* Smooth transition for border color */
+}
+
+/* Change border color on focus */
+#task-filter:focus {
+    border-color: #28a745; /* Change border color on focus */
+    outline: none; /* Remove default outline */
+}
+
+#task-filter option {
+    padding: 10px; 
+    background-color: #fff; 
+    color: #333; 
+}
+
+
+.input-section_todo {
     margin-bottom: 20px;
+    
 }
 
-input[type="text"] {
-    width: 80%;
+input {
+    width: 60%;
     padding: 10px;
-    font-size: 16px;
+    margin-right: 5px;
+    border: 1px solid #ddd;
     border-radius: 4px;
-    border: 1px solid #ccc;
 }
 
 button {
     padding: 10px 20px;
-    background-color: #4CAF50;
+    background-color: #28a745;
     color: white;
     border: none;
-    cursor: pointer;
     border-radius: 4px;
+    cursor: pointer;
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #218838;
+}
+/* Styles specifically for the to-do list */
+.container-todo ul.todo-list {
+    list-style: none;
+    margin-top: 20px;
+    padding: 0;
 }
 
+.container-todo ul.todo-list li.todo-item {
+    background-color: #f8f9fa;
+    margin-bottom: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
 
+.container-todo ul.todo-list li.todo-item.completed span {
+    text-decoration: line-through;
+    color: gray;
+}
+
+.container-todo ul.todo-list li.todo-item button {
+    margin-left: 5px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.container-todo ul.todo-list li.todo-item button.complete-btn {
+    background-color: #28a745;
+    color: white;
+}
+
+.container-todo ul.todo-list li.todo-item button.complete-btn:hover {
+    background-color: #218838;
+}
+
+.container-todo ul.todo-list li.todo-item button.edit-btn {
+    background-color: #ffc107;
+    color: white;
+}
+
+.container-todo ul.todo-list li.todo-item button.edit-btn:hover {
+    background-color: #e0a800;
+}
+
+.container-todo ul.todo-list li.todo-item button.delete-btn {
+    background-color: #dc3545;
+    color: white;
+}
+
+.container-todo ul.todo-list li.todo-item button.delete-btn:hover {
+    background-color: #c82333;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: gray;
+}
+
+button.delete-btn {
+    background-color: #dc3545;
+    margin-left: 5px;
+}
+
+button.delete-btn:hover {
+    background-color: #c82333;
+}
 
 .modal_todo {
     display: none;
     position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    z-index: 1000;
 }
 
 .modal-content_todo {
-    background-color: #fff;
-    margin: 15% auto;
-    padding: 20px;
-    border-radius: 8px;
-    width: 40%;
+    text-align: center;
 }
 
 .close {
-    float: right;
+    position: absolute;
+    top: 10px;
+    right: 10px;
     cursor: pointer;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover {
-    color: red;
 }
